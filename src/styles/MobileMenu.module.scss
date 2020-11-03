@@ -1,0 +1,40 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(33, 33, 33, 0.5);
+  display: none;
+}
+
+.logo {
+  display: block;
+  width: 138px;
+  margin: 0 auto 25px;
+}
+
+.menuwrap {
+  padding: 40px 30px;
+  background: linear-gradient(180deg, #f5db13 0%, #f2b807 100%);
+  border-radius: 0 0 16px 16px;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &Link {
+    padding-bottom: 16px;
+    font-size: 27px;
+
+    &:hover {
+      border-color: currentColor;
+    }
+  }
+}
