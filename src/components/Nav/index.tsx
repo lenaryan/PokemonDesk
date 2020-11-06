@@ -1,5 +1,5 @@
 import React from 'react';
-import s from '../styles/Nav.module.scss';
+import s from './Nav.module.scss';
 
 interface IMenu {
   id: number;

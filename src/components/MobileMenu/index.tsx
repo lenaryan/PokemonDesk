@@ -1,14 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
-import Logo from '../images/logo.svg';
-import s from '../styles/MobileMenu.module.scss';
+import { ReactComponent as Logo } from '../../images/logo.svg';
+import s from './MobileMenu.module.scss';
 
 const MobileMenu = () => {
   return (
     <section className={cn(s.overlay, 'mobile-menu')}>
       <div className={s.menuwrap}>
         <a href="/" className={s.logo} aria-label="Main page">
-          <Logo viewBox="0 0 158 63" />
+          <Logo />
         </a>
         <nav>
           <ul className={s.menu}>
