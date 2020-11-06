@@ -1,0 +1,38 @@
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  &Link {
+    margin-left: 70px;
+    padding-bottom: 16px;
+    font-size: 25px;
+    display: block;
+    line-height: 1;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+      border-color: currentColor;
+    }
+  }
+}
+
+.active {
+  border-color: currentColor;
+}
+
+@media (max-width: 1024px) {
+  .menuLink {
+    font-size: 19px;
+    margin-left: 40px;
+    padding-bottom: 23px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+}

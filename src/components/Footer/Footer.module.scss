@@ -1,0 +1,28 @@
+.footer {
+  padding-bottom: 33px;
+  font-weight: 700;
+
+  &Cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &Link:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding-bottom: 15px;
+
+    &Cont {
+      flex-direction: column-reverse;
+    }
+
+    &Make {
+      font-weight: 400;
+    }
+  }
+}

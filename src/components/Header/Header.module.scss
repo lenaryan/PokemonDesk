@@ -1,0 +1,48 @@
+.header {
+  padding: 15px 0;
+  box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
+
+  &Cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  display: block;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 24px 0;
+  }
+  .logo {
+    width: 120px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 20px;
+  }
+  .logo {
+    width: 58px;
+  }
+  .burger {
+    display: block;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
