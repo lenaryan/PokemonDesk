@@ -1,3 +1,5 @@
+@import '../variables';
+
 .overlay {
   position: fixed;
   top: 0;
@@ -17,7 +19,7 @@
 
 .menuwrap {
   padding: 40px 30px;
-  background: linear-gradient(180deg, #f5db13 0%, #f2b807 100%);
+  background: linear-gradient(180deg, $third 0%, $primary 100%);
   border-radius: 0 0 16px 16px;
 }
 
