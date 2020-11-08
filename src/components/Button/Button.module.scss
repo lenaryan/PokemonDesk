@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .root {
   border: none;
   background-color: #73d677;
@@ -18,4 +20,17 @@
     box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.18);
     padding-bottom: 6px;
   }
+}
+
+.w100 {
+  width: 100%;
+}
+
+.smallBtn {
+  font-size: 12px;
+  height: 16px;
+}
+
+.primaryBtn {
+  background-color: $primary;
 }
