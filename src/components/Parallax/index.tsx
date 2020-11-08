@@ -28,21 +28,21 @@ const Parallax = () => {
       <div
         className={s.smallPokeBall}
         style={{
-          transform: `translate(${screenY * 0.05}px, ${screenX * 0.05}px)`,
+          transform: `translate(${screenY * 0.03}px, ${screenX * 0.05}px)`,
         }}>
         <img src={SmallPokeBallPng} alt="Small PokeBall" />
       </div>
       <div
         className={s.cloud}
         style={{
-          transform: `translate(${screenY * 0.04}px, ${screenX * 0.04}px)`,
+          transform: `translate(${screenY * 0.04}px, ${screenX * 0.02}px)`,
         }}>
         <img src={CloudPng} alt="Cloud PokeBall" />
       </div>
       <div
         className={s.cloudBig}
         style={{
-          transform: `translate(${screenY * 0.03}px, ${screenX * 0.03}px)`,
+          transform: `translate(${screenY * 0.04}px, ${screenX * 0.02}px)`,
         }}>
         <img src={CloudBigPng} alt="Cloud Big PokeBall" />
       </div>
@@ -50,7 +50,7 @@ const Parallax = () => {
       <div
         className={s.pokeBall}
         style={{
-          transform: `translate(${screenY * 0.02}px, ${screenX * 0.02}px)`,
+          transform: `translate(${screenY * 0.03}px, ${screenX * 0.05}px)`,
         }}>
         <img src={PokeBallPng} alt="Big PokeBall" />
       </div>
