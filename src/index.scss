@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Karla';
+  font-display: swap;
+  font-weight: 400;
+  src: url(../src/fonts/Karla-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Karla';
+  font-display: swap;
+  font-weight: 700;
+  src: url(../src/fonts/Karla-Bold.ttf) format('truetype');
+}
+
 @import './variables';
 
 html {
