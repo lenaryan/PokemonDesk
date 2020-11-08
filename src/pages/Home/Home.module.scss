@@ -1,11 +1,33 @@
-.contentText {
-  color: inherit;
-}
+@import '../../variables';
 
 .contentWrap {
   flex: 1;
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.contentText {
+  color: black;
+  width: 49%;
 }
 
 .contentParallax {
   color: inherit;
+  width: 51%;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 1.17;
+  margin-top: 0;
+  margin-bottom: 65px;
+}
+
+p {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 65px;
 }
