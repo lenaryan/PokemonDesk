@@ -11,9 +11,11 @@
   "author": "Lena Ryan <deggmb@yandex.ru>",
   "license": "MIT",
   "dependencies": {
+    "@types/react-router-dom": "^5.1.6",
     "classnames": "^2.2.6",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.4.0",

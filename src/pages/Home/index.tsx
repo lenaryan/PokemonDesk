@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Button from '../../components/Button';
@@ -10,7 +9,6 @@ import s from './Home.module.scss';
 const Home = () => {
   return (
     <>
-      <Header />
       <Layout className={s.contentWrap}>
         <div className={s.contentText}>
           <h1>
