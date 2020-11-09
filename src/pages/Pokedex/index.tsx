@@ -19,16 +19,16 @@ const Pokedex = () => {
         <Button fullWidth onClick={() => {}}>
           Button Full Width
         </Button>
-        <Button size="small" onClick={() => {}}>
+        <Button size="smallBtn" onClick={() => {}}>
           Button Small
         </Button>
-        <Button color="primary" onClick={() => {}}>
+        <Button color="primaryBtn" onClick={() => {}}>
           Button Primary
         </Button>
-        <Button color="primary" size="small" onClick={() => {}}>
+        <Button color="primaryBtn" size="smallBtn" onClick={() => {}}>
           Button Primary Small
         </Button>
-        <Button color="primary" fullWidth onClick={() => {}}>
+        <Button color="primaryBtn" fullWidth onClick={() => {}}>
           Button Primary Full Width
         </Button>
       </Layout>

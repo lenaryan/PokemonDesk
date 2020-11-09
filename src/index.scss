@@ -46,6 +46,18 @@ main {
   flex: 1;
 }
 
+// until I fix the Button component...
+// god damn enum
+
+.smallBtn {
+  font-size: 12px;
+  height: 16px;
+}
+
+.primaryBtn {
+  background-color: $primary;
+}
+
 @media (max-width: 700px) {
   .container {
     width: 100%;

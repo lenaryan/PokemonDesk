@@ -28,8 +28,8 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth, size, col
       className={cn(
         s.root,
         fullWidth && s.w100,
-        size && s.smallBtn,
-        color && s.primaryBtn,
+        size,
+        color,
         // s[size],
         // s[color],
         // выводит ошибку
