@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .menu {
   list-style-type: none;
   margin: 0;
@@ -7,20 +9,36 @@
 
   &Link {
     margin-left: 70px;
-    padding-bottom: 16px;
+    padding-bottom: 20px;
     font-size: 25px;
     display: block;
     line-height: 1;
-    border-bottom: 3px solid transparent;
+    position: relative;
 
-    &:hover {
-      border-color: currentColor;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -8px;
+      height: 1px;
+      width: 1%;
+      background: $dark;
+      border: 1px solid $dark;
+      border-radius: 6px;
+      opacity: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      transition: opacity, width ease-in-out 0.25s;
+    }
+
+    &:hover,
+    &.activeLink {
+      &:after {
+        width: 100%;
+        opacity: 1;
+      }
     }
   }
-}
-
-.active {
-  border-color: currentColor;
 }
 
 @media (max-width: 1024px) {

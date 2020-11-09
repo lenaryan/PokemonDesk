@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import s from './Nav.module.scss';
 
 interface IMenu {
@@ -16,7 +17,7 @@ const MENU: IMenu[] = [
   {
     id: 2,
     value: 'Pokédex',
-    link: '/',
+    link: '/pokedex',
   },
   {
     id: 3,
@@ -36,9 +37,9 @@ const Nav = () => {
       <ul className={s.menu}>
         {MENU.map(({ value, link, id }) => (
           <li key={id}>
-            <a href={link} className={s.menuLink}>
+            <Link to={link} className={s.menuLink}>
               {value}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
