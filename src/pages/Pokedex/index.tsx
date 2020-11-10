@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
+import Header from '../../components/Header';
 import Button from '../../components/Button';
 
 // import { Colors, Sizes } from '../../components/Button'
@@ -9,6 +10,7 @@ import Button from '../../components/Button';
 const Pokedex = () => {
   return (
     <>
+      <Header />
       <Layout>
         <Heading level="1">Pokedex H1</Heading>
         <Heading level="2">Pokedex H2</Heading>
