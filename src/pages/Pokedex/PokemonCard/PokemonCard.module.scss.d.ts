@@ -5,6 +5,7 @@ interface CssExports {
   label: string;
   labelWrap: string;
   pictureWrap: string;
+  poison: string;
   root: string;
   statItem: string;
   statValue: string;

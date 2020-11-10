@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
@@ -222,20 +223,20 @@ const pokemons = [
 
 const Pokedex = () => {
   return (
-    <>
+    <div className={cn(s.pokedexPage, 'rootBlock')}>
       <Header />
       <Layout>
         <Heading level="3" className={s.pokedexTitle}>
           800 <b>Pokemons</b> for you to choose your favorite
         </Heading>
-        <div className="pokemonsWrap">
+        <div className={s.pokemonsWrap}>
           {pokemons.map((item) => (
-            <PokemonCard pokemon={item} />
+            <PokemonCard key={item.id} pokemon={item} />
           ))}
         </div>
       </Layout>
       <Footer />
-    </>
+    </div>
   );
 };
 
