@@ -1,4 +1,5 @@
 import React from 'react';
+import { A } from 'hookrouter';
 import cn from 'classnames';
 import s from './Header.module.scss';
 import Nav from '../Nav';
@@ -15,9 +16,9 @@ const Header = () => {
   return (
     <header className={s.header}>
       <div className={cn('container', s.headerCont)}>
-        <a href="/" className={s.logo} aria-label="Main page">
+        <A href="/" className={s.logo} aria-label="Main page">
           <Logo />
-        </a>
+        </A>
 
         <Nav />
 

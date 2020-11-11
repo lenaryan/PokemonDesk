@@ -18,7 +18,7 @@ interface ButtonProps {
   fullWidth?: boolean;
   size?: string;
   color?: string;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth, size, color }) => {
