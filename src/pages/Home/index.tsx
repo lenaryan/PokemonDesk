@@ -5,14 +5,13 @@ import Layout from '../../components/Layout';
 import Button from '../../components/Button';
 import Parallax from '../../components/Parallax';
 import Heading from '../../components/Heading';
-import Header from '../../components/Header';
 
 import s from './Home.module.scss';
+import { LinkEnum } from '../../routes';
 
 const Home = () => {
   return (
     <>
-      <Header />
       <Layout className={s.contentWrap}>
         <div className={s.contentText}>
           <Heading level="1">
@@ -21,7 +20,7 @@ const Home = () => {
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
           <Button
             onClick={() => {
-              navigate('/pokedex');
+              navigate(LinkEnum.POKEDEX);
             }}>
             See pokemons
           </Button>

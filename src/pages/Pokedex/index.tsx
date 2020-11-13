@@ -1,23 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import cn from 'classnames';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
-import Header from '../../components/Header';
-import PokemonCard from './PokemonCard';
-import pokemons from './pokemonData';
+import PokemonCard, { PokemonProps } from './PokemonCard';
 import s from './Pokedex.module.scss';
 
+interface IUsePokemons {
+  data: {
+    total: number;
+    pokemons: PokemonProps[];
+  };
+  isLoading: boolean;
+  isError: boolean;
+}
+
+const usePokemons = (): IUsePokemons => {
+  const [data, setData] = useState({ total: 0, pokemons: [] });
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    const getPokemons = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('http://zar.hosthot.ru/api/v1/pokemons?limit=20');
+        const result = await response.json();
+        setData(result);
+      } catch (e) {
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getPokemons();
+  }, []);
+
+  return {
+    data,
+    isLoading,
+    isError,
+  };
+};
+
 const Pokedex = () => {
+  const { data, isLoading, isError } = usePokemons();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Something&apos;s Wrong!</div>;
+  }
+
   return (
     <div className={cn(s.pokedexPage, 'rootBlock')}>
-      <Header />
       <Layout>
         <Heading level="3" className={s.pokedexTitle}>
-          800 <b>Pokemons</b> for you to choose your favorite
+          {data.total} <b>Pokemons</b> for you to choose your favorite
         </Heading>
         <div className={s.pokemonsWrap}>
-          {pokemons.map((item) => (
+          {data.pokemons.map((item: PokemonProps) => (
             <PokemonCard key={item.id} pokemon={item} />
           ))}
         </div>

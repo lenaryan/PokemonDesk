@@ -2,4 +2,91 @@
 
 .rootNotFound {
   background-color: $danger;
+  position: relative;
+}
+
+.text404 {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  position: absolute;
+  z-index: 1;
+  font-size: 48vw;
+  line-height: 0.7;
+  left: 50%;
+  top: 18%;
+  transform: translateX(-50%);
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image404 {
+  display: block;
+  max-width: 60%;
+}
+
+.heading404 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 60px;
+
+  &White {
+    color: white;
+    margin-right: 10px;
+  }
+}
+
+.content404 {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.button404 {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (max-width: 800px) {
+  .heading404 {
+    display: flex;
+    flex-direction: column;
+    font-size: 45px;
+    margin-bottom: 40px;
+  }
+
+  .image404 {
+    max-width: 65%;
+  }
+
+  .text404 {
+    font-size: 54vw;
+  }
+
+  .button404 {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading404 {
+    font-size: 25px;
+    margin-bottom: 70px;
+    margin-top: 25px;
+  }
+
+  .image404 {
+    max-width: 70%;
+  }
+
+  .button404 {
+    height: 47px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 18px;
+  }
 }
