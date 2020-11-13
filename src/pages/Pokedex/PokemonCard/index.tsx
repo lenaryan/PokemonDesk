@@ -3,28 +3,30 @@ import Heading from '../../../components/Heading';
 
 import s from './PokemonCard.module.scss';
 
-interface PokemonProps {
-  pokemon: {
-    abilities: string[];
-    baseExperience: number;
-    height: number;
-    id: number;
-    img: string;
-    isDefault: boolean;
-    name: string;
-    nameClean: string;
-    order: number;
-    stats: {
-      attack: number;
-      defense: number;
-      hp: number;
-      'special-attack': number;
-      'special-defense': number;
-      speed: number;
-    };
-    types: string[];
-    weight: number;
+export interface PokemonProps {
+  abilities: string[];
+  baseExperience: number;
+  height: number;
+  id: number;
+  img: string;
+  isDefault: boolean;
+  name: string;
+  nameClean: string;
+  order: number;
+  stats: {
+    attack: number;
+    defense: number;
+    hp: number;
+    'special-attack': number;
+    'special-defense': number;
+    speed: number;
   };
+  types: string[];
+  weight: number;
+}
+
+interface IPokemonPropsCard {
+  pokemon: PokemonProps;
 }
 
 interface CardColorsType {
@@ -52,7 +54,7 @@ const CardsColors: CardColorsType = {
   electric: '#f7c545',
 };
 
-const PokemonCard: React.FC<PokemonProps> = ({ pokemon }) => {
+const PokemonCard: React.FC<IPokemonPropsCard> = ({ pokemon }) => {
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>
@@ -70,16 +72,16 @@ const PokemonCard: React.FC<PokemonProps> = ({ pokemon }) => {
           </div>
         </div>
         <div className={s.labelWrap}>
-          {pokemon.types.map((typesItem) => {
+          {pokemon.types.map((typesItem: string) => {
             return (
-              <span key={pokemon.id} className={s.label} style={{ background: CardsColors[typesItem] }}>
+              <span key={pokemon.name} className={s.label} style={{ background: CardsColors[typesItem] }}>
                 {typesItem}
               </span>
             );
           })}
         </div>
       </div>
-      <div className={s.pictureWrap}>
+      <div className={s.pictureWrap} style={{ background: CardsColors[pokemon.types[0]] }}>
         <img src={pokemon.img} alt={pokemon.name} />
       </div>
     </div>

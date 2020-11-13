@@ -4,6 +4,7 @@ import cn from 'classnames';
 import Button from '../../components/Button';
 
 import s from './NotFound.module.scss';
+import { LinkEnum } from '../../routes';
 
 const NotFound = () => {
   return (
@@ -11,7 +12,7 @@ const NotFound = () => {
       <Button
         color="primaryBtn"
         onClick={() => {
-          navigate('/');
+          navigate(LinkEnum.HOME);
         }}>
         Return
       </Button>
