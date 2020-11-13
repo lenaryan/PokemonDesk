@@ -18,10 +18,11 @@ interface ButtonProps {
   fullWidth?: boolean;
   size?: string;
   color?: string;
+  className?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth, size, color }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth, size, color, className }) => {
   return (
     <button
       type="button"
@@ -30,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth, size, col
         fullWidth && s.w100,
         size,
         color,
+        className,
         // s[size],
         // s[color],
         // выводит ошибку
