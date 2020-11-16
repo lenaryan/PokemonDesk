@@ -5,6 +5,7 @@ import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
 import PokemonCard, { PokemonProps } from './PokemonCard';
 import s from './Pokedex.module.scss';
+import config from '../../config';
 
 interface IUsePokemons {
   data: {
@@ -23,8 +24,9 @@ const usePokemons = (): IUsePokemons => {
   useEffect(() => {
     const getPokemons = async () => {
       setIsLoading(true);
+      const url = `${config.client.server.protocol}://${config.client.server.host}${config.client.endpoint.getPokemons.uri.pathname}`;
       try {
-        const response = await fetch('http://zar.hosthot.ru/api/v1/pokemons?limit=20');
+        const response = await fetch(url);
         const result = await response.json();
         setData(result);
       } catch (e) {
