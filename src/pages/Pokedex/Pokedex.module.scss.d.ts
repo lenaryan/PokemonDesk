@@ -4,6 +4,7 @@ interface CssExports {
   pokedexPage: string;
   pokedexTitle: string;
   pokemonsWrap: string;
+  search: string;
 }
 export const cssExports: CssExports;
 export default cssExports;
