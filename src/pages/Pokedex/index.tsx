@@ -9,15 +9,35 @@ import useData from '../../hook/getData';
 
 const Pokedex = () => {
   const [searchValue, setSearchValue] = useState('');
+  const [typesValue, setTypesValue] = useState<string[]>([]);
   const [query, setQuery] = useState({});
 
-  const { data, isLoading, isError } = useData('getPokemons', query, [searchValue]);
+  const { data, isLoading, isError } = useData('getPokemons', query, [searchValue, typesValue]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
     setQuery((s) => ({
       ...s,
       name: e.target.value,
+    }));
+  };
+
+  const handleTypeChoose = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { options } = e.target;
+    const typesArr: string[] = [];
+
+    // getting all selected options from types select
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].selected) {
+        typesArr.push(options[i].value);
+      }
+    }
+
+    setTypesValue(typesArr);
+
+    setQuery((s) => ({
+      ...s,
+      types: typesArr,
     }));
   };
 
@@ -34,6 +54,15 @@ const Pokedex = () => {
           onChange={handleSearchChange}
           placeholder="Encuentra tu pokémon..."
         />
+
+        <div className="filters">
+          <select name="" id="" onChange={handleTypeChoose} multiple>
+            <option value="grass">Grass</option>
+            <option value="water">Water</option>
+            <option value="fire">Fire</option>
+            <option value="poison">Poison</option>
+          </select>
+        </div>
 
         {isError && <div>Something&apos;s Wrong!</div>}
 

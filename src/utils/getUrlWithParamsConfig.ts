@@ -5,6 +5,7 @@ function getUrlWithParamsConfig(endpointConfig: string, query: object) {
     ...config.client.server,
     ...config.client.endpoint[endpointConfig as keyof typeof config.client.endpoint].uri,
     query: {
+      limit: 15,
       ...query,
     },
   };
