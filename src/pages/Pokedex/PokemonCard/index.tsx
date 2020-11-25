@@ -1,32 +1,11 @@
 import React from 'react';
 import Heading from '../../../components/Heading';
+import { PokemonsRequest } from '../../../interface/pokemons';
 
 import s from './PokemonCard.module.scss';
 
-export interface PokemonProps {
-  abilities: string[];
-  baseExperience: number;
-  height: number;
-  id: number;
-  img: string;
-  isDefault: boolean;
-  name: string;
-  nameClean: string;
-  order: number;
-  stats: {
-    attack: number;
-    defense: number;
-    hp: number;
-    'special-attack': number;
-    'special-defense': number;
-    speed: number;
-  };
-  types: string[];
-  weight: number;
-}
-
 interface IPokemonPropsCard {
-  pokemon: PokemonProps;
+  pokemon: PokemonsRequest;
 }
 
 interface CardColorsType {
