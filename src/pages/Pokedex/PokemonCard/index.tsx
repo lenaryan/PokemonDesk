@@ -1,6 +1,7 @@
 import React from 'react';
 import Heading from '../../../components/Heading';
 import { PokemonsRequest } from '../../../interface/pokemons';
+import toCapitalizeFirstLetter from '../../../utils/toCapitalizeFirstLetter';
 
 import s from './PokemonCard.module.scss';
 
@@ -38,7 +39,7 @@ const PokemonCard: React.FC<IPokemonPropsCard> = ({ pokemon }) => {
     <div className={s.root}>
       <div className={s.infoWrap}>
         <Heading level="5" className={s.titleName}>
-          {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
+          {toCapitalizeFirstLetter(pokemon.name)}
         </Heading>
         <div className={s.statWrap}>
           <div className={s.statItem}>
@@ -54,7 +55,7 @@ const PokemonCard: React.FC<IPokemonPropsCard> = ({ pokemon }) => {
           {pokemon.types.map((typesItem: string) => {
             return (
               <span key={pokemon.name} className={s.label} style={{ background: CardsColors[typesItem] }}>
-                {typesItem}
+                {toCapitalizeFirstLetter(typesItem)}
               </span>
             );
           })}
