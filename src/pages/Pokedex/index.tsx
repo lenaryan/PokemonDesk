@@ -10,13 +10,16 @@ import { IPokemons, PokemonsRequest } from '../../interface/pokemons';
 import useDebounce from '../../hook/useDebounce';
 
 interface IQuery {
+  limit: number;
   name?: string;
 }
 
 const Pokedex = () => {
   const [searchValue, setSearchValue] = useState('');
   const [typesValue, setTypesValue] = useState<string[]>([]);
-  const [query, setQuery] = useState<IQuery>({});
+  const [query, setQuery] = useState<IQuery>({
+    limit: 12,
+  });
 
   const debouncedValue = useDebounce(searchValue, 500);
 
