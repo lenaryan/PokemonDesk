@@ -3,21 +3,32 @@ import cn from 'classnames';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
-import PokemonCard, { PokemonProps } from './PokemonCard';
+import PokemonCard from './PokemonCard';
 import s from './Pokedex.module.scss';
 import useData from '../../hook/getData';
+import { IPokemons, PokemonsRequest } from '../../interface/pokemons';
+import useDebounce from '../../hook/useDebounce';
+
+interface IQuery {
+  limit: number;
+  name?: string;
+}
 
 const Pokedex = () => {
   const [searchValue, setSearchValue] = useState('');
   const [typesValue, setTypesValue] = useState<string[]>([]);
-  const [query, setQuery] = useState({});
+  const [query, setQuery] = useState<IQuery>({
+    limit: 12,
+  });
 
-  const { data, isLoading, isError } = useData('getPokemons', query, [searchValue, typesValue]);
+  const debouncedValue = useDebounce(searchValue, 500);
+
+  const { data, isLoading, isError } = useData<IPokemons>('getPokemons', query, [debouncedValue, typesValue]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
-    setQuery((s) => ({
-      ...s,
+    setQuery((state: IQuery) => ({
+      ...state,
       name: e.target.value,
     }));
   };
@@ -45,7 +56,7 @@ const Pokedex = () => {
     <div className={cn(s.pokedexPage, 'rootBlock')}>
       <Layout>
         <Heading level="3" className={s.pokedexTitle}>
-          {data.total} <b>Pokemons</b> for you to choose your favorite
+          {data && data.total} <b>Pokemons</b> for you to choose your favorite
         </Heading>
         <input
           className={s.search}
@@ -70,9 +81,7 @@ const Pokedex = () => {
 
         {!isLoading && (
           <div className={s.pokemonsWrap}>
-            {data.pokemons.map((item: PokemonProps) => (
-              <PokemonCard key={item.id} pokemon={item} />
-            ))}
+            {data && data.pokemons.map((item: PokemonsRequest) => <PokemonCard key={item.id} pokemon={item} />)}
           </div>
         )}
       </Layout>
