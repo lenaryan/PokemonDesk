@@ -19,6 +19,7 @@ module.exports = {
     'react/prop-types': 'off',
     'no-shadow': 'off',
     'no-plusplus': 'off',
+    'global-require': 0,
     'import/extensions': [
       'error',
       'ignorePackages',
